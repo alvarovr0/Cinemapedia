@@ -57,11 +57,12 @@ class _MovieHorizontalListviewState extends State<MovieHorizontalListview> {
 
           Expanded(
             child: ListView.builder(
+              controller: scrollController,
               itemCount: widget.movies.length,
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),
               itemBuilder: (context, index) {
-                return _Slide(movie: widget.movies[index],);
+                return FadeInRight(child: _Slide(movie: widget.movies[index],));
               }
             )
           ),
